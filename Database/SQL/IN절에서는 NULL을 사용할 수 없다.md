@@ -77,5 +77,5 @@ SELECT * FROM students WHERE score IN (100,90) OR score IS NULL;
 ![correct_in_query](image/correct_in_query.png)
 
 ## 결론!
-> 결론은 IN절에는 NULL을 사용하지 말도록 하자
+> 결론은 IN절에는 NULL을 사용하지 말도록 하자  
 > NULL 체크를 해야한다면 IS NULL 혹은 IS NOT NULL로 하자
