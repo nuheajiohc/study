@@ -129,10 +129,10 @@ public class PersonController {
 
 
 ## 역직렬화(JSON -> 객체)
-JSON을 시스템의 데이터로 파싱하는 과정을 말한다.
+JSON을 시스템의 데이터로 변환하는 과정을 말한다.
 
 ### 자바스크립트에서 역직렬화
-`JSON.parse(데이터)`를 사용해서 역직렬화를 한다.
+`JSON.parse(json 문자열)`를 사용해서 역직렬화를 한다.
 ```javascript
 // JSON 문자열
 const json = '{"name": "Alice", "age": 30, "hobbies": ["reading", "traveling"]}';
