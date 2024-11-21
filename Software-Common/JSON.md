@@ -113,7 +113,7 @@ public class Main {
 }
 ```
 
-스프링 부트를 사용하면 `@ResponseBody` 통해 자동으로 직렬화가 이루어진다. 
+스프링 부트를 사용하면 `@ResponseBody`(@RestController 내부에 존재) 통해 자동으로 직렬화가 이루어진다. 
 ```java
 @RestController
 public class PersonController {
