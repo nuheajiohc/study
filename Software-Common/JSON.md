@@ -203,13 +203,6 @@ console.log(JSON.parse(str1)); // 출력: "true" (문자열로 반환됨)
 
 const str2 = true;
 console.log(JSON.parse(str2)); // 출력: "true (boolean으로 반환됨)
-
-const a = 1
-const b = "1"
-const c = '"1"'
-console.log(typeof JSON.parse(a)) // number으로 반환
-console.log(typeof JSON.parse(b)) // number으로 반환
-console.log(typeof JSON.parse(c)) // string으로 반환
 ```
 ## 내 생각
 다양한 형식으로 전송이 가능하지만 JSON이라는 이름에 맞게 객체 형식으로 보내는 것이 좋은 것 같다.  
