@@ -29,7 +29,7 @@ mysql에서 아래 쿼리문을 실행하면 어떤 대조 순서를 사용하�
 SHOW VARIABLES LIKE 'collation_server';
 ```
 실행결과  
-![collation_server.png](collation_server.png)
+![collation_server.png](image/collation_server.png)
 
 여기서 각각의 요소가 의미하는 건 다음과 같다.  
 - utf8mb4: 문자 집합
