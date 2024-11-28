@@ -1,4 +1,4 @@
-# MySQL에서 `SELECT` 별칭은 `GROUP BY`, `ORDER BY`, `HAVING` 절에서 사용 가능하다
+# MySQL에서 SELECT 별칭은 GROUP BY, ORDER BY, HAVING 절에서 사용 가능하다
 
 ## 상황
 프로그래머스에서 [카테고리 별 상품 개수 구하기](https://school.programmers.co.kr/learn/courses/30/lessons/131529?language=mysql) 문제를 풀다가 의문이 들었다.  
