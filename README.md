@@ -1,5 +1,10 @@
 # STUDY
 
+## Servlet
+
+### 아직 블로깅 하지 않은 것
+- [Tomcat 버전별 Jakarta 설정 및 서블릿 디펜던시 설정](./Back-End/Servlet/Tomcat%20버전별%20Jakarta%20설정%20및%20서블릿%20디펜던시%20설정.md)
+
 ## SQL
 - [MySQL은 문자열 대소문자 구분을 하지 않는다.](https://nuheajiohc.tistory.com/5)
 - [MySQL에서 SELECT 별칭은 GROUP BY, ORDER BY, HAVING 절에서 사용 가능하다](https://nuheajiohc.tistory.com/8)
