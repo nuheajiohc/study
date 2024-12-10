@@ -9,6 +9,7 @@
 - [SQL IN절에서 NULL이 예상대로 동작하지 않는 이유](https://nuheajiohc.tistory.com/9)
 - [MySQL에서 날짜 차이 계산하는 방법](https://nuheajiohc.tistory.com/10)
 - [COUNT 함수와 SUM 함수의 차이점](https://nuheajiohc.tistory.com/11)
+- [MySQL ONLY_FULL_GROUP_BY 이해하기](https://nuheajiohc.tistory.com/13)
 
 ## Software-Common
 - [JSON(JavaScript Object Notation)](https://nuheajiohc.tistory.com/4)

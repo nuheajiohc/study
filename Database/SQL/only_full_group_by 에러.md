@@ -1,6 +1,6 @@
 # MySQL ONLY_FULL_GROUP_BY 이해하기
 
-MySQL에서 `GROUP BY`를 사용할 떄 다음과 같은 오류가 발생할 때가 있다. 
+MySQL에서 `GROUP BY`를 사용할 때 다음과 같은 오류가 발생할 때가 있다. 
 ``` 
 Error Code:1055. 
 Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'practice.employees.hire_date' 
@@ -65,7 +65,7 @@ GROUP BY department;
 ```
 - `GROUP BY`는 `department`로 묶지만, `SELECT`에서는 `name`을 반환하려 한다.
 - 같은 부서(department)에 여러 명(name)이 있을 수 있으므로 MySQL은 어떤 `name`을 반환해야 할지 모른다.
-- 그러므로 `only_full_group_by` 모드 활성화 시 에러가 발생합니다.
+- 그러므로 `only_full_group_by` 모드 활성화 시 에러가 발생한다.
 
 **sql_mode에서 only_full_group_by를 비활성화한다면?**
 ```sql
