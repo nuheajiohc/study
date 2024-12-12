@@ -11,6 +11,9 @@
 - [COUNT 함수와 SUM 함수의 차이점](https://nuheajiohc.tistory.com/11)
 - [MySQL ONLY_FULL_GROUP_BY 이해하기](https://nuheajiohc.tistory.com/13)
 
+### 아직 블로깅하지 않은 것
+- [window 함수 활용법(feat. group by와 다른점)](./Database/SQL/window%20함수%20활용법(feat.%20group%20by와%20다른점).md)
+
 ## Software-Common
 - [JSON(JavaScript Object Notation)](https://nuheajiohc.tistory.com/4)
 - [XML(eXtensible Markup Language)이란](https://nuheajiohc.tistory.com/7)
