@@ -1,5 +1,9 @@
 # STUDY
 
+## 스프링
+### 아직 블로깅하지 않은 것
+[자바에서 기본적인 외부 설정 전달 방법 (OS 환경변수, JVM 옵션, 커맨드 라인 인수, 커맨드 라인 옵션 인수)](Back-End/Spring/%EC%9E%90%EB%B0%94%EC%97%90%EC%84%9C%20%EA%B8%B0%EB%B3%B8%EC%A0%81%EC%9D%B8%20%EC%99%B8%EB%B6%80%20%EC%84%A4%EC%A0%95%20%EC%A0%84%EB%8B%AC%20%EB%B0%A9%EB%B2%95%20%28OS%20%ED%99%98%EA%B2%BD%EB%B3%80%EC%88%98%2C%20JVM%20%EC%98%B5%EC%85%98%2C%20%EC%BB%A4%EB%A7%A8%EB%93%9C%20%EB%9D%BC%EC%9D%B8%20%EC%9D%B8%EC%88%98%2C%20%EC%BB%A4%EB%A7%A8%EB%93%9C%20%EB%9D%BC%EC%9D%B8%20%EC%98%B5%EC%85%98%20%EC%9D%B8%EC%88%98%29.md)
+
 ## Servlet
 - [Tomcat 버전별 Jakarta 설정 및 서블릿 디펜던시 설정](https://nuheajiohc.tistory.com/12)
 

@@ -1,4 +1,4 @@
-# 스프링에서 외부 설정을 관리하는 방법
+# 기본적인 외부 설정 전달 방법 (OS 환경변수, JVM 옵션, 커맨드 라인 인수, 커맨드 라인 옵션 인수)
 애플리케이션 개발 시 외부 설정을 읽을 수 있는 다양한 방법이 존재한다.  
 이 글에서는 그 방법들에 대해서 알아보고 스프링에서 그 방법들을 어떻게 통합해서 관리하는 지 알아보겠다.
 
@@ -194,56 +194,14 @@ java -jar app.jar --key1=value1 --key2=value2 --flag
 2. `Program Arguments`에 인수를 공백으로 구분해 입력 (예: `--key1=value1 --key2=value2 --flag`)
 
 
+## Properties파일과 Yml파일
+- Properties 파일은 자바에서 지원하는 Properties클래스와 피일 읽기로 읽을 수 있다.
+- Yml파일 읽는 방법은 공식적으로는 지원하지 않고, SnakeYAML 외부 의존성을 추가하여 읽을 수 있다.
 
+> 두 파일을 통해 읽는 것에 대해서는 추후에 더 자세하게 다뤄볼 기회가 있다면 다뤄보겠다.
 
-
-
-
-
-
-
-## 추가 사항
-### 외부 파일 사용
-- 설정값을 파일로 분리하여 관리하면 유지보수가 용이합니다.
-- 예: `application.properties` 또는 `application.yml` 파일을 사용.
-- 스프링에서는 `@Value` 또는 `@ConfigurationProperties`를 통해 외부 파일 설정을 매핑할 수 있습니다.
-
-#### `application.properties` 예시
-```properties
-server.port=8080
-datasource.url=jdbc:mysql://localhost:3306/mydb
-```
-
-#### 프로퍼티 매핑 예시
-```java
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
-
-@Component
-public class AppConfig {
-
-  @Value("${server.port}")
-  private int port;
-
-  @Value("${datasource.url}")
-  private String dataSourceUrl;
-
-  // Getters and Setters
-}
-```
-
----
 
 ## 정리
-스프링에서 외부 설정을 가져오는 방법은 다양하며, 목적과 상황에 맞게 선택하여 사용할 수 있습니다. OS 환경 변수, 자바 시스템 속성, 커맨드 라인 인수, 외부 파일 등 각 방식의 특징과 사용법을 이해하고 적절히 활용해보세요.
-
-
-
-## 외부 설정 방법을 하나로 통합한 스프링 부트
-커맨드 라인 인수로 외부 설정을 사용하는 경우를 제외하고는 모두 외부 설정을 `key=value` 형식으로 사용할 수 있는 방법이다.
-그런데 이 외부 설정값을 사용하는 개발자 입장에서는 `key=value`형식으로 값을 읽는다는 것은 같지만 읽는 방법이 달라서 각각의 사용법을 익혀야한다.  
-예를 들어서 OS환경 변수는 `System.getenv(key)`를 사용해야하고, 자바 시스템 속성은 `System.getProperty(key)`, 커맨드 라인 옵션 인수는 `getOptionValues(key)`메서드를 사용해서 설정값을 조회한다.  
-
-스프링은 이 문제를 `Environment`와 `PropertySource`로 추상화해서 해결한다.
-
-![springsetting.png](%EC%99%B8%EB%B6%80%EC%84%A4%EC%A0%95%20%EC%9D%B4%EB%AF%B8%EC%A7%80/springsetting.png)
+다양한 방식으로 외부 파일을 읽을 수 있다는 것을 알았다.  
+하지만 외부 설정을 읽는다는 기능은 같은데 읽는 방식이 달라서 개발자 입장에서는 사용하기 불편하다.  
+스프링은 이 문제를 `Environment`와 `PropertySource`라는 추상화를 통해 해결한다.
