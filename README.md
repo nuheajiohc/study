@@ -1,10 +1,15 @@
 # STUDY
 
 ## 스프링
-### 아직 블로깅하지 않은 것
-[자바에서 기본적인 외부 설정 전달 방법 (OS 환경변수, JVM 옵션, 커맨드 라인 인수, 커맨드 라인 옵션 인수)](Back-End/Spring/%EC%9E%90%EB%B0%94%EC%97%90%EC%84%9C%20%EA%B8%B0%EB%B3%B8%EC%A0%81%EC%9D%B8%20%EC%99%B8%EB%B6%80%20%EC%84%A4%EC%A0%95%20%EC%A0%84%EB%8B%AC%20%EB%B0%A9%EB%B2%95%20%28OS%20%ED%99%98%EA%B2%BD%EB%B3%80%EC%88%98%2C%20JVM%20%EC%98%B5%EC%85%98%2C%20%EC%BB%A4%EB%A7%A8%EB%93%9C%20%EB%9D%BC%EC%9D%B8%20%EC%9D%B8%EC%88%98%2C%20%EC%BB%A4%EB%A7%A8%EB%93%9C%20%EB%9D%BC%EC%9D%B8%20%EC%98%B5%EC%85%98%20%EC%9D%B8%EC%88%98%29.md)  
-[1. 자바 외부 설정 조회 방법.md](Back-End/Spring/%EC%8A%A4%ED%94%84%EB%A7%81%20%EC%99%B8%EB%B6%80%20%EC%84%A4%EC%A0%95%20%EC%A0%95%EB%A6%AC/1.%20%EC%9E%90%EB%B0%94%20%EC%99%B8%EB%B6%80%20%EC%84%A4%EC%A0%95%20%EC%A1%B0%ED%9A%8C%20%EB%B0%A9%EB%B2%95.md)
 
+
+### 외부 설정 시리즈
+[1부: 자바 애플리케이션에서 외부 설정 조회 방법](https://nuheajiohc.tistory.com/15)
+
+### 아직 블로깅하지 않은 것
+[2부: 스프링 외부 설정 통합 관리 : Environment와 PropertySource의 동작 구조](Back-End/Spring/%EC%8A%A4%ED%94%84%EB%A7%81%20%EC%99%B8%EB%B6%80%20%EC%84%A4%EC%A0%95%20%EC%A0%95%EB%A6%AC/2.%20%EC%8A%A4%ED%94%84%EB%A7%81%20%EC%99%B8%EB%B6%80%20%EC%84%A4%EC%A0%95%20%ED%86%B5%ED%95%A9%20%EA%B4%80%EB%A6%AC%20%3A%20Environment%EC%99%80%20PropertySource%EC%9D%98%20%EB%8F%99%EC%9E%91%20%EA%B5%AC%EC%A1%B0.md)  
+[3부: 스프링 레거시와 스프링부트의 외부 설정 비교](Back-End/Spring/%EC%8A%A4%ED%94%84%EB%A7%81%20%EC%99%B8%EB%B6%80%20%EC%84%A4%EC%A0%95%20%EC%A0%95%EB%A6%AC/3.%20%EC%8A%A4%ED%94%84%EB%A7%81%20%EB%A0%88%EA%B1%B0%EC%8B%9C%EC%99%80%20%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%9D%98%20%EC%99%B8%EB%B6%80%20%EC%84%A4%EC%A0%95%20%EB%B9%84%EA%B5%90.md)  
+[4부: @ConfigurationProperties으로 타입 안전하게 외부 설정 관리 하기](Back-End/Spring/%EC%8A%A4%ED%94%84%EB%A7%81%20%EC%99%B8%EB%B6%80%20%EC%84%A4%EC%A0%95%20%EC%A0%95%EB%A6%AC/4.%20%40ConfigurationProperties%EC%9C%BC%EB%A1%9C%20%ED%83%80%EC%9E%85%20%EC%95%88%EC%A0%84%ED%95%98%EA%B2%8C%20%EC%99%B8%EB%B6%80%20%EC%84%A4%EC%A0%95%20%EA%B4%80%EB%A6%AC%20%ED%95%98%EA%B8%B0.md)
 
 ## Servlet
 - [Tomcat 버전별 Jakarta 설정 및 서블릿 디펜던시 설정](https://nuheajiohc.tistory.com/12)
