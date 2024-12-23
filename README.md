@@ -11,9 +11,7 @@
 
 ## Servlet
 - [Tomcat 버전별 Jakarta 설정 및 서블릿 디펜던시 설정](https://nuheajiohc.tistory.com/12)
-
-### 아직 블로깅하지 않은 것
-- [WAS.md](Back-End/Spring/WAS.md)
+- [WAS(Tomcat)이 필요한 이유.md](https://nuheajiohc.tistory.com/19)
 
 
 ## SQL
