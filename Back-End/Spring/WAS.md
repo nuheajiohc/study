@@ -35,6 +35,10 @@ WAS(Web Application Server)는 웹 애플리케이션을 실행하고 관리하�
 | HttpServletRequest  | org.apache.catalina.connector.Request        | org.eclipse.jetty.server.Request   |
 | HttpServletResponse | org.apache.catalina.connector.Response       | org.eclipse.jetty.server.Response  |
 |HttpSession          | org.apache.catalina.session.StandardSession  |org.eclipse.jetty.server.session.Session |
-> 정리하자면 Tomcat 사용 시 org.apache.catalina.connector.Request / Jetty 사용 시 org.eclipse.jetty.server.Request 처럼 WAS별로 구현체 클래스가 다름  
-> 즉, 어떤 하나의 WAS에 종속적이지 않고 표준화된 방식으로 서블릿 기반 애플리케이션을 개발할 수 있다.
+
+
+## 3. 정리
+- Tomcat 사용 시 org.apache.catalina.connector.Request / Jetty 사용 시 org.eclipse.jetty.server.Request 처럼 WAS별로 구현체 클래스가 다르다. 
+- 어떤 하나의 WAS에 종속적이지 않고 표준화된 방식으로 서블릿 기반 애플리케이션을 개발할 수 있다.
+- Tomcat, Jetty 등의 WAS가 필요한 이유는 실제 구현체가 WAS에 정의 되어 있고, 애플리케이션 단에서는 인터페이스로만 정의 되어 있기 떄문이다.
 
