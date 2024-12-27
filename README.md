@@ -1,7 +1,7 @@
 # STUDY
 
 ## 스프링
-[서블릿 컨테이너 초기화](Back-End/Spring/%EC%84%9C%EB%B8%94%EB%A6%BF%20%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88%20%EC%B4%88%EA%B8%B0%ED%99%94.md)
+[서블릿 컨테이너 초기화와 스프링의 처리 방식](https://nuheajiohc.tistory.com/20)
 
 ### 외부 설정 시리즈
 - [1부: 자바 애플리케이션에서 외부 설정 조회 방법](https://nuheajiohc.tistory.com/15)  
