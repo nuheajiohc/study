@@ -32,6 +32,6 @@
 
 ## 프로젝트
 ### 서블릿 + 쇼핑몰
-- [Servlet으로 쇼핑몰 프로젝트 만들기 다시 시작.md](project/%EC%84%9C%EB%B8%94%EB%A6%BF%20%EC%87%BC%ED%95%91%EB%AA%B0/Servlet%EC%9C%BC%EB%A1%9C%20%EC%87%BC%ED%95%91%EB%AA%B0%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0%20%EB%8B%A4%EC%8B%9C%20%EC%8B%9C%EC%9E%91.md)
-- [첫 스프링 컨트리뷰트 도전기(feat.실패).md](project/%EC%84%9C%EB%B8%94%EB%A6%BF%20%EC%87%BC%ED%95%91%EB%AA%B0/%EC%B2%AB%20%EC%8A%A4%ED%94%84%EB%A7%81%20%EC%BB%A8%ED%8A%B8%EB%A6%AC%EB%B7%B0%ED%8A%B8%20%EB%8F%84%EC%A0%84%EA%B8%B0%28feat.%EC%8B%A4%ED%8C%A8%29.md)
-- [Java Unchecked Warning 해결 방법.md](project/%EC%84%9C%EB%B8%94%EB%A6%BF%20%EC%87%BC%ED%95%91%EB%AA%B0/Java%20Unchecked%20Warning%20%ED%95%B4%EA%B2%B0%20%EB%B0%A9%EB%B2%95.md)
+- [Servlet으로 쇼핑몰 프로젝트 만들기 다시 시작](https://nuheajiohc.tistory.com/23)
+- [첫 스프링 컨트리뷰트 도전기(feat.실패)](https://nuheajiohc.tistory.com/24)
+- [Java Unchecked Warning 해결 방법](https://nuheajiohc.tistory.com/25)
