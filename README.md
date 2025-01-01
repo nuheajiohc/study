@@ -12,7 +12,7 @@
 
 ## Servlet
 - [Tomcat 버전별 Jakarta 설정 및 서블릿 디펜던시 설정](https://nuheajiohc.tistory.com/12)
-- [WAS(Tomcat)이 필요한 이유.md](https://nuheajiohc.tistory.com/19)
+- [WAS(Tomcat)이 필요한 이유](https://nuheajiohc.tistory.com/19)
 
 ## SQL
 - [MySQL은 문자열 대소문자 구분을 하지 않는다.](https://nuheajiohc.tistory.com/5)
@@ -28,9 +28,7 @@
 - [XML(eXtensible Markup Language)이란](https://nuheajiohc.tistory.com/7)
 
 ## React
-
-### 아직 블로깅하지 않은 것
-- [React의 useEffect 실행순서 (feat. fetch)](./Front-End/React/React의%20useEffect%20실행순서%20(feat.%20fetch).md)
+- [React의 useEffect 실행순서 (feat. fetch).md](Front-End/React/React%EC%9D%98%20useEffect%20%EC%8B%A4%ED%96%89%EC%88%9C%EC%84%9C%20%28feat.%20fetch%29.md)
 
 ## 프로젝트
 ### 서블릿 + 쇼핑몰
