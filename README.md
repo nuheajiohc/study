@@ -1,9 +1,9 @@
 # STUDY
 
 ## 스프링
-[서블릿 컨테이너 초기화와 스프링의 처리 방식](https://nuheajiohc.tistory.com/20)
-[BeanFactory와 ApplicationContext](https://nuheajiohc.tistory.com/21)
-[Bean 등록할 때 @Configuration을 사용해야 하는 이유](https://nuheajiohc.tistory.com/22)
+- [서블릿 컨테이너 초기화와 스프링의 처리 방식](https://nuheajiohc.tistory.com/20)
+- [BeanFactory와 ApplicationContext](https://nuheajiohc.tistory.com/21)
+- [Bean 등록할 때 @Configuration을 사용해야 하는 이유](https://nuheajiohc.tistory.com/22)
 ### 외부 설정 시리즈
 - [1부: 자바 애플리케이션에서 외부 설정 조회 방법](https://nuheajiohc.tistory.com/15)  
 - [2부: 스프링 외부 설정 통합 관리 : Environment와 PropertySource의 동작 구조](https://nuheajiohc.tistory.com/16)
