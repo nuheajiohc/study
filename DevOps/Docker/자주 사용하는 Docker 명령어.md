@@ -87,7 +87,7 @@ docker run nginx # 포그라운드에서 실행 (추가적인 명령어 조작�
 ### 백그라운드에서 실행
 ```bash
 # docker run -d 이미지명[:태그명]
-Docker run -d nginx
+docker run -d nginx
 
 # Nginx 컨테이너 중단 후 삭제하기
 docker ps # 실행 중인 컨테이너 조회
@@ -165,8 +165,8 @@ docker logs [nginx가 실행되고 있는 컨테이너 ID]
 
 ### 최근 로그 10줄만 조회
 ```bash
-# dokcer logs --tail [로그 끝부터 표시할 줄 수] [컨테이너 ID 또는 컨테이너명]
-dokcer logs --tail 10 [컨테이너 ID 또는 컨테이너명]
+# docker logs --tail [로그 끝부터 표시할 줄 수] [컨테이너 ID 또는 컨테이너명]
+docker logs --tail 10 [컨테이너 ID 또는 컨테이너명]
 ```
 
 ### 기존 로그 조회 + 생성되는 로그를 실시간으로 보고 싶은 경우
