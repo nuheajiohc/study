@@ -12,10 +12,10 @@
 - [3부: 스프링 레거시와 스프링부트의 외부 설정 비교](https://nuheajiohc.tistory.com/17)  
 - [4부: @ConfigurationProperties으로 타입 안전하게 외부 설정 관리](https://nuheajiohc.tistory.com/18)
 
-## Servlet
+## Servlet, JSP
 - [Tomcat 버전별 Jakarta 설정 및 서블릿 디펜던시 설정](https://nuheajiohc.tistory.com/12)
 - [WAS(Tomcat)이 필요한 이유](https://nuheajiohc.tistory.com/19)
-
+- [JSP 동작구조.md](Back-End/Servlet/JSP%20%EB%8F%99%EC%9E%91%EA%B5%AC%EC%A1%B0.md)
 ## SQL
 - [MySQL은 문자열 대소문자 구분을 하지 않는다.](https://nuheajiohc.tistory.com/5)
 - [MySQL에서 SELECT 별칭은 GROUP BY, ORDER BY, HAVING 절에서 사용 가능하다](https://nuheajiohc.tistory.com/8)
