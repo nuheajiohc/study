@@ -78,9 +78,11 @@ docker image rm -f $(docker images -q)
 
 ```bash
 # docker run 이미지명[:태그명]
-docker run nginx # 포그라운드에서 실행 (추가적인 명령어 조작을 할 수가 없음)
-
+docker run nginx # 포그라운드에서 실행 (추가적인 명령어 조작을 할 수가 없음
 # Ctrl + C로 종료할 수 있음
+
+# docker start 컨테이너명[또는 컨테이너 ID]
+docker start 컨테이너명[또는 컨테이너 ID] # 중단 중인 컨테이너 재실행
 ```
 - 도커 환경에서 다운받은 이미지가 없다면 Dockerhub로부터 이미지를 다운 받은 후 실행시켜준다.
 
