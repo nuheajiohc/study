@@ -16,6 +16,8 @@
 - [Tomcat 버전별 Jakarta 설정 및 서블릿 디펜던시 설정](https://nuheajiohc.tistory.com/12)
 - [WAS(Tomcat)이 필요한 이유](https://nuheajiohc.tistory.com/19)
 - [JSP 동작구조.md](Back-End/Servlet/JSP%20%EB%8F%99%EC%9E%91%EA%B5%AC%EC%A1%B0.md)
+- [Jsp 사용할 때 루트 경로에서 index.jsp가 작동하는 이유.md](Back-End/Servlet/Jsp%20%EC%82%AC%EC%9A%A9%ED%95%A0%20%EB%95%8C%20%EB%A3%A8%ED%8A%B8%20%EA%B2%BD%EB%A1%9C%EC%97%90%EC%84%9C%20index.jsp%EA%B0%80%20%EC%9E%91%EB%8F%99%ED%95%98%EB%8A%94%20%EC%9D%B4%EC%9C%A0.md)
+
 ## SQL
 - [MySQL은 문자열 대소문자 구분을 하지 않는다.](https://nuheajiohc.tistory.com/5)
 - [MySQL에서 SELECT 별칭은 GROUP BY, ORDER BY, HAVING 절에서 사용 가능하다](https://nuheajiohc.tistory.com/8)
