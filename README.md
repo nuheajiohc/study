@@ -37,6 +37,7 @@
 - [Servlet으로 쇼핑몰 프로젝트 만들기 다시 시작](https://nuheajiohc.tistory.com/23)
 - [첫 스프링 컨트리뷰트 도전기(feat.실패)](https://nuheajiohc.tistory.com/24)
 - [Java Unchecked Warning 해결 방법](https://nuheajiohc.tistory.com/25)
+- [DispatcherServlet 만들 때 매핑 주의할 점.md](project/%EC%84%9C%EB%B8%94%EB%A6%BF%20%EC%87%BC%ED%95%91%EB%AA%B0/DispatcherServlet%20%EB%A7%8C%EB%93%A4%20%EB%95%8C%20%EB%A7%A4%ED%95%91%20%EC%A3%BC%EC%9D%98%ED%95%A0%20%EC%A0%90.md)
 
 ## Docker
 - [Docker 기본 개념.md](DevOps/Docker/Docker%20%EA%B8%B0%EB%B3%B8%20%EA%B0%9C%EB%85%90.md)
