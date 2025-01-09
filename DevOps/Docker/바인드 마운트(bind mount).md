@@ -35,7 +35,7 @@ cd /Users/choijaehun/Documents/Develop
 mkdir docker-mysql # MySQL 데이터를 저장하고 싶은 폴더 만들기
 
 # docker run -e MYSQL_ROOT_PASSWORD=password123 -p 3306:3306 -v {호스트의 절대경로}/mysql_data:/var/lib/mysql -d mysql
-docker run -e MYSQL_ROOT_PASSWORD=password123 -p 3306:3306 -v /Users/jaeseong/Documents/Develop/docker-mysql/mysql_data:/var/lib/mysql -d mysql
+docker run -e MYSQL_ROOT_PASSWORD=password123 -p 3306:3306 -v /Users/choijaehun/Documents/Develop/docker-mysql/mysql_data:/var/lib/mysql -d mysql
 ```
 
 ### 설명
@@ -59,7 +59,7 @@ docker stop [MySQL 컨테이너 ID]
 docker rm [MySQL 컨테이너 ID]
 
 # 비밀번호 바꿔서 컨테이너 생성
-docker run -e MYSQL_ROOT_PASSWORD=pwd1234 -p 3306:3306 -v /Users/jaeseong/Documents/Develop/docker-mysql/mysql_data:/var/lib/mysql -d mysql
+docker run -e MYSQL_ROOT_PASSWORD=pwd1234 -p 3306:3306 -v /Users/choijaehun/Documents/Develop/docker-mysql/mysql_data:/var/lib/mysql -d mysql
 
 docker exec -it [MySQL 컨테이너 ID] bash
 mysql -u root -p # 접속이 안 됨...
