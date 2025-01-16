@@ -32,4 +32,5 @@ CSS가 어떻게 적용되는지 확인하면서 개발하기 위해 개발자�
 
 > 내가 백엔드를 공부하고 있어서 이 기능을 당장에 유용하게 사용할지는 모르겠지만 이 기능을 사용할 언제가를 위해 일단 알아는 둬야겠다.
 
-
+## 참고
+[크롬 devtools 공식 문서](https://developer.chrome.com/blog/new-in-devtools-117?hl=ko)
