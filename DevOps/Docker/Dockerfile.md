@@ -78,17 +78,19 @@ COPY *.txt /text-files/ # 현재 경로의 모든 txt확장자를 가진 파일�
 
 #### .dockerignore: 특정 파일 제외하고 COPY
 1. .dockerignore 파일 만들기
-```bash
-readme.txt
-```
+
+  ```bash
+  readme.txt
+  ```
 2. Dockerfile 만들어서 이미지 생성 및 컨테이너 실행
-```bash
-FROM ubuntu
-
-COPY ./ /  # 현재 경로의 모든 폴더와 파일을 컨테이너로 복사
-
-ENTRYPOINT ["/bin/bash", "-c", "sleep 500"] # 디버깅용 코드 
-```
+   
+  ```bash
+  FROM ubuntu
+  
+  COPY ./ /  # 현재 경로의 모든 폴더와 파일을 컨테이너로 복사
+  
+  ENTRYPOINT ["/bin/bash", "-c", "sleep 500"] # 디버깅용 코드 
+  ```
 - readme.txt 빼고 복사된다.
 
 ### ENTRYPOINT: 컨테이너가 시작할 때 실행 되는 명령어
