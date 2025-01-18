@@ -123,7 +123,7 @@ services:
 - `environment: ...` : CLI에서 `-e MYSQL_ROOT_PASSWORD=password` 역할과 동일하다.
 - `volumes: ...` : CLI에서 `-v {호스트 경로}:/var/lib/mysql` 역할과 동일하다.
 
-## SpringBoot 실행하기
+### SpringBoot 실행하기
 #### 1. Dockerfile 작성하기
 ```Dockerfile
 FROM openjdk:17-jdk

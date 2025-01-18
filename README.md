@@ -46,6 +46,6 @@
 - [자주 사용하는 Docker 명령어](https://nuheajiohc.tistory.com/27)
 - [바인드 마운트](https://nuheajiohc.tistory.com/28)
 - [Dockerfile](https://nuheajiohc.tistory.com/29)
-- [Docker Compose.md](DevOps/Docker/Docker%20Compose.md)
+- [Docker Compose](https://nuheajiohc.tistory.com/30)
 ## React
 - [React의 useEffect 실행순서 (feat. fetch).md](Front-End/React/React%EC%9D%98%20useEffect%20%EC%8B%A4%ED%96%89%EC%88%9C%EC%84%9C%20%28feat.%20fetch%29.md)
