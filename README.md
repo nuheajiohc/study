@@ -19,6 +19,9 @@
 - [Jsp 사용할 때 루트 경로에서 index.jsp가 작동하는 이유.md](Back-End/Servlet/Jsp%20%EC%82%AC%EC%9A%A9%ED%95%A0%20%EB%95%8C%20%EB%A3%A8%ED%8A%B8%20%EA%B2%BD%EB%A1%9C%EC%97%90%EC%84%9C%20index.jsp%EA%B0%80%20%EC%9E%91%EB%8F%99%ED%95%98%EB%8A%94%20%EC%9D%B4%EC%9C%A0.md)
 - [서블릿 매핑 우선순위.md](Back-End/Servlet/%EC%84%9C%EB%B8%94%EB%A6%BF%20%EB%A7%A4%ED%95%91%20%EC%9A%B0%EC%84%A0%EC%88%9C%EC%9C%84.md)
 
+## Test
+- [스프링 부트 3.4 버전부터 @MockBean 대신 @MockitoBean으로 사용.md](Back-End/Test/%EC%8A%A4%ED%94%84%EB%A7%81%20%EB%B6%80%ED%8A%B8%203.4%20%EB%B2%84%EC%A0%84%EB%B6%80%ED%84%B0%20%40MockBean%20%EB%8C%80%EC%8B%A0%20%40MockitoBean%EC%9C%BC%EB%A1%9C%20%EC%82%AC%EC%9A%A9.md)
+
 ## SQL
 - [MySQL은 문자열 대소문자 구분을 하지 않는다.](https://nuheajiohc.tistory.com/5)
 - [MySQL에서 SELECT 별칭은 GROUP BY, ORDER BY, HAVING 절에서 사용 가능하다](https://nuheajiohc.tistory.com/8)
