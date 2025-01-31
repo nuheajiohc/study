@@ -20,7 +20,7 @@
 - [서블릿 매핑 우선순위](https://nuheajiohc.tistory.com/32)
 
 ## Test
-- [스프링 부트 3.4 버전부터 @MockBean 대신 @MockitoBean으로 사용.md](Back-End/Test/%EC%8A%A4%ED%94%84%EB%A7%81%20%EB%B6%80%ED%8A%B8%203.4%20%EB%B2%84%EC%A0%84%EB%B6%80%ED%84%B0%20%40MockBean%20%EB%8C%80%EC%8B%A0%20%40MockitoBean%EC%9C%BC%EB%A1%9C%20%EC%82%AC%EC%9A%A9.md)
+- [스프링 부트 3.4부터 @MockBean이 deprecated되고 @MockitoBean으로 변경된 이유](https://nuheajiohc.tistory.com/34)
 
 ## SQL
 - [MySQL은 문자열 대소문자 구분을 하지 않는다.](https://nuheajiohc.tistory.com/5)
