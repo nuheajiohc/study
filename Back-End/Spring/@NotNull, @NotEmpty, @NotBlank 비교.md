@@ -70,3 +70,5 @@ public class CommentDTO {
 | **@NotNull**  | 불허      | 허용                | 허용                  | 모든 객체      |
 | **@NotEmpty** | 불허      | 불허                | 허용                  | 문자열, 컬렉션 |
 | **@NotBlank** | 불허      | 불허                | 불허                  | 문자열         |
+
+> null과 빈 문자열, 공백 문자열을 다 통제하는 NotBlank가 가장 좋아 보일 수 있는데 컬렉션이나 배열을 검증하는 것은 @NotEmpty 뿐이기 때문에 상황에 맞게 선택하는 것이 중요하다.
