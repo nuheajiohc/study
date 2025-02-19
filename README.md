@@ -33,6 +33,9 @@
 - [MySQL ONLY_FULL_GROUP_BY 이해하기](https://nuheajiohc.tistory.com/13)
 - [window 함수 활용법(feat. group by와 다른점)](https://nuheajiohc.tistory.com/14)
 
+## Network
+- [인터넷 네트워크 구조](https://nuheajiohc.tistory.com/39)
+
 ## Software-Common
 - [JSON(JavaScript Object Notation)](https://nuheajiohc.tistory.com/4)
 - [XML(eXtensible Markup Language)이란](https://nuheajiohc.tistory.com/7)
