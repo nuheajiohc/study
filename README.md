@@ -49,7 +49,10 @@
 - [Tailwind CSS 사용하기](https://nuheajiohc.tistory.com/37)
 - [개발자도구만 열면 CSS가 깨지는 이유? DevTools 재정의 문제 해결](https://nuheajiohc.tistory.com/38)
 - [JPA getSingleResult 사용 시 값이 없을 떄.md](project/%EC%84%9C%EB%B8%94%EB%A6%BF%20%EC%87%BC%ED%95%91%EB%AA%B0/JPA%20getSingleResult%20%EC%82%AC%EC%9A%A9%20%EC%8B%9C%20%EA%B0%92%EC%9D%B4%20%EC%97%86%EC%9D%84%20%EB%96%84.md)
-- 
+
+### inkbridge 리팩토링
+- [Maven 프로젝트에서 Lombok이 인식되지 않는 문제 해결.md](project/inkbridge/Maven%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%97%90%EC%84%9C%20Lombok%EC%9D%B4%20%EC%9D%B8%EC%8B%9D%EB%90%98%EC%A7%80%20%EC%95%8A%EB%8A%94%20%EB%AC%B8%EC%A0%9C%20%ED%95%B4%EA%B2%B0.md)
+
 ## Docker
 - [Docker 기본 개념](https://nuheajiohc.tistory.com/26)
 - [자주 사용하는 Docker 명령어](https://nuheajiohc.tistory.com/27)
