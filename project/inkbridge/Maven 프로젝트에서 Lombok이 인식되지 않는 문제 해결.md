@@ -5,7 +5,7 @@
 과거에 진행했던 **Maven 기반의 팀 프로젝트**를 다시 리팩토링하기 위해 클론을 받아왔다.  
 하지만 프로젝트를 컴파일하는 과정에서 **Lombok을 인식하지 못하는 문제**가 발생했다.
 
-### 🔍 문제 분석
+### 문제 분석
 이 프로젝트는 **Maven 기반**으로 작성되었으며, 당시 정상적으로 작동하던 프로젝트였다.
 하지만 현재 환경에서 빌드하자 **Lombok이 정상적으로 적용되지 않는 문제**가 발생했다.
 이 프로젝트 이후에 나는 **Gradle**만 사용했는데 **Gradle**에서는 `annotationProcessor` 설정을 추가하여 Lombok을 사용한다.  
@@ -13,7 +13,7 @@
 
 ## 해결 방법
 
-### 1️⃣ `pom.xml`에 `maven-compiler-plugin`에 대한 Lombok 설정 추가
+### `pom.xml`에 `maven-compiler-plugin`에 대한 Lombok 설정 추가
 
 Maven의 `maven-compiler-plugin`을 사용하여 Lombok을 올바르게 인식하도록 설정해야 한다.
 
