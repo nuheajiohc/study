@@ -52,7 +52,7 @@
 
 ### inkbridge 리팩토링
 - [Maven 프로젝트에서 Lombok이 인식되지 않는 문제 해결](https://nuheajiohc.tistory.com/40)
-- [Logback 설정 실수로 인해 로그가 출력되지 않은 문제 해결 과정.md](project/inkbridge/Logback%20%EC%84%A4%EC%A0%95%20%EC%8B%A4%EC%88%98%EB%A1%9C%20%EC%9D%B8%ED%95%B4%20%EB%A1%9C%EA%B7%B8%EA%B0%80%20%EC%B6%9C%EB%A0%A5%EB%90%98%EC%A7%80%20%EC%95%8A%EC%9D%80%20%EB%AC%B8%EC%A0%9C%20%ED%95%B4%EA%B2%B0%20%EA%B3%BC%EC%A0%95.md)
+- [Logback 설정 실수로 인해 로그가 출력되지 않은 문제 해결 과정](https://nuheajiohc.tistory.com/41)
 
 ## Docker
 - [Docker 기본 개념](https://nuheajiohc.tistory.com/26)
