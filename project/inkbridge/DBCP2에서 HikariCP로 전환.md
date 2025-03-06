@@ -272,11 +272,11 @@ idleTimeout은 10분,
 maxLifeTime은 30분으로 설정된다. 나머지 설정들은 제거되고, 검증은 isValid로 자동화된다.
 
 ## 참고
-[우아한 형제들](https://techblog.woowahan.com/2664/)
-[Naver D2 - DBCP](https://d2.naver.com/helloworld/5102792)
-[HikariCP 깃허브](https://github.com/brettwooldridge/HikariCP)
-[SynchronusQueue 참고 블로그](https://m.blog.naver.com/jjoommnn/130171358905)
-[DBCP 참고 블로그](https://jh-labs.tistory.com/595)
-[DBCP 깃허브](https://github.com/apache/commons-dbcp)
-[HikariCP 속도 비교](https://dev-ws.tistory.com/106)
+[우아한 형제들](https://techblog.woowahan.com/2664/)  
+[Naver D2 - DBCP](https://d2.naver.com/helloworld/5102792)  
+[HikariCP 깃허브](https://github.com/brettwooldridge/HikariCP)  
+[SynchronusQueue 참고 블로그](https://m.blog.naver.com/jjoommnn/130171358905)  
+[DBCP 참고 블로그](https://jh-labs.tistory.com/595)  
+[DBCP 깃허브](https://github.com/apache/commons-dbcp)  
+[HikariCP 속도 비교](https://dev-ws.tistory.com/106)  
 [HikariCP idle connection valid](https://pkgonan.github.io/2018/04/HikariCP-test-while-idle)
