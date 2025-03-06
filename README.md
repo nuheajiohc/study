@@ -53,7 +53,7 @@
 ### inkbridge 리팩토링
 - [Maven 프로젝트에서 Lombok이 인식되지 않는 문제 해결](https://nuheajiohc.tistory.com/40)
 - [Logback 설정 실수로 인해 로그가 출력되지 않은 문제 해결 과정](https://nuheajiohc.tistory.com/41)
-- [DBCP2에서 HikariCP로 전환](project/inkbridge/DBCP2%EC%97%90%EC%84%9C%20HikariCP%EB%A1%9C%20%EC%A0%84%ED%99%98.md)
+- [DBCP2에서 HikariCP로 전환](https://nuheajiohc.tistory.com/42)
 
 ## Docker
 - [Docker 기본 개념](https://nuheajiohc.tistory.com/26)

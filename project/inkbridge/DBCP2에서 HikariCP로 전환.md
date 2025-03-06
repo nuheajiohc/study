@@ -41,7 +41,8 @@ DBCP2는 DBCP1의 후속 버전으로 2014년에 출시되어 성능 개선 및 
 각 필드들은 위와 같고 여기서 더 확인해볼 것은 idleObjects인 것 같아서 일부분만 확인해보자.  
 
 ![LinkedBlockingDeque_snippet](img/LinkedBlockingDeque_snippet.png)  
-LinkedBlockingDeque의 poll메서드만 가져왔는데 거의 모든 메서드에서 lock을 위처럼 lock을 사용한다.
+LinkedBlockingDeque의 poll메서드만 가져왔는데 거의 모든 메서드에서 위처럼 lock을 사용한다.
+미리 말하자면 hikariCP는 lock을 거의 사용하지 않고 CAS연산으로 동시성을 해결해서 lock 비용이 발생하지 않는다.
 
 ### 1.2 커넥션을 빌리는 과정
 DBCP의 커넥션을 빌리고 반납하는 과정은 단순하다.  
@@ -62,11 +63,11 @@ HikariCP 깃허브에서 제공하는 벤치마크 결과를 보면 HikariCP는 
 ![connection_pool-benchmark](img/connectionpool-benchmark.png)  
 [출처: HicariCP 깃허브](https://github.com/brettwooldridge/HikariCP)
 
-**2.1.1 Connection 획득 및 반납 속도**
+#### **2.1.1 Connection 획득 및 반납 속도**
 - **Connection Cycle ops/ms**는 새로운 커넥션을 획득하고 반납하는 속도를 측정한 것이다.  
 - HikariCP는 `DataSource.getConnection()`, `Connection.close()` 성능에서 다른 커넥션 풀 대비 우수한 처리량을 보인다.
 
-**SQL Statement 실행 속도**  
+#### **SQL Statement 실행 속도**  
 - **Statement Cycle ops/ms**는 SQL Statement를 실행하는 속도를 측정한 것이다.
 - `Connection.prepareStatement()`, `Statement.execute()`, `Statement.close()`에 대한 성능에서도 HikariCP가 가증 높은 처리량을 보여준다.
 
@@ -98,7 +99,7 @@ HikariCP 깃허브에서 제공하는 벤치마크 결과를 보면 HikariCP는 
 
 즉, HikariCP는 단순한 커넥션풀이 아니라 JVM 바이트코드, CPU 캐시, OS 스케줄러까지 고려하여 최적화를 진행한 커넥션풀이다.
 
-### 내부구조
+### 2.3 내부구조
 아래는 HikariPool안에 들어있는 가장 메인이 되는 클래스라고 볼 수 있다. 이 클래스를 통해서 커넥션을 부여하고 반납한다.
 
 **ConcurrentBag.class**
@@ -263,7 +264,7 @@ public DataSource hikariDataSource() {
 
 ```
 일단 이렇게 바꾸면 될 것 같다.
-하지만 DBCP 최적화 설정은 서비스 상황과 CPU등의 컴퓨터 사양에 맞춰서 설정해야 한다한다.  
+하지만 DBCP 최적화 설정은 서비스 상황과 CPU등의 컴퓨터 사양에 맞춰서 설정해야 한다.  
 그래서 변경한 값은 위 코드처럼 고칠 수 있지만 일단은 default값으로 두고 사용하고 적합한 옵션을 찾아볼 생각이다.
 
 그러면 maxmumPoolSize와 minIdle은 10,  
