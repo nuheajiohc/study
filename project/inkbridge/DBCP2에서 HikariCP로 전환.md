@@ -12,7 +12,7 @@ DBCP는 Apache Commons 프로젝트에서 제공하는 커넥션 풀이다. DBCP
 DBCP2는 DBCP1의 후속 버전으로 2014년에 출시되어 성능 개선 및 버그 수정이 이루어졌다.  
 
 ### 1.1 내부구조
-![dbcp2-GenericObjectPool](img/dbcp2-GenericObjectPool.png)
+![dbcp2-GenericObjectPool](img/connectionpool/dbcp2-GenericObjectPool.png)
 
 위 클래스는 DBCP2의 메인이 되는 클래스이다. 각 필드의 역할을 살펴보자
 - ONAME_BASE
@@ -40,7 +40,7 @@ DBCP2는 DBCP1의 후속 버전으로 2014년에 출시되어 성능 개선 및 
 
 각 필드들은 위와 같고 여기서 더 확인해볼 것은 idleObjects인 것 같아서 일부분만 확인해보자.  
 
-![LinkedBlockingDeque_snippet](img/LinkedBlockingDeque_snippet.png)  
+![LinkedBlockingDeque_snippet](img/connectionpool/LinkedBlockingDeque_snippet.png)  
 LinkedBlockingDeque의 poll메서드만 가져왔는데 거의 모든 메서드에서 위처럼 lock을 사용한다.
 미리 말하자면 hikariCP는 lock을 거의 사용하지 않고 CAS연산으로 동시성을 해결해서 lock 비용이 발생하지 않는다.
 
@@ -60,7 +60,7 @@ HikariCP는 성능과 안정성을 고려하여 설계된 커넥션 풀이다.
 
 HikariCP 깃허브에서 제공하는 벤치마크 결과를 보면 HikariCP는 DBCP2를 포함해 어떤 커넥션 풀보다 속도가 성능이 좋은 것을 확인할 수 있다.  
 
-![connection_pool-benchmark](img/connectionpool-benchmark.png)  
+![connection_pool-benchmark](img/connectionpool/connectionpool-benchmark.png)  
 [출처: HicariCP 깃허브](https://github.com/brettwooldridge/HikariCP)
 
 #### **2.1.1 Connection 획득 및 반납 속도**
@@ -104,7 +104,7 @@ HikariCP 깃허브에서 제공하는 벤치마크 결과를 보면 HikariCP는 
 
 **ConcurrentBag.class**
 
-![ConcurrentBag1](img/ConcurrentBag1.png)  
+![ConcurrentBag1](img/connectionpool/ConcurrentBag1.png)  
 
 각 필드의 역할을 살펴보자.
 
@@ -123,7 +123,7 @@ HikariCP 깃허브에서 제공하는 벤치마크 결과를 보면 HikariCP는 
 **ConcurrentBag - borrow method**    
 HikariCP는 DBCP와 다르게 크게 3단걔로 나눠서 커넥션을 획득한다. borrow 메서드를 보면서 확인해보자. 
 
-![ConcurrentBag-borrow](img/ConcurrentBag-borrow.png)
+![ConcurrentBag-borrow](img/connectionpool/ConcurrentBag-borrow.png)
 
 크게 위 세 영역으로 나눌 수 있다.  
 - **threadList를 관리하는 잉역**
@@ -142,7 +142,7 @@ HikariCP는 DBCP와 다르게 크게 3단걔로 나눠서 커넥션을 획득한
 
 **SynchronouseQueue**  
 
-![SynchronousQueue](img/SynchronousQueue.png)  
+![SynchronousQueue](img/connectionpool/SynchronousQueue.png)  
 
 이것은 마지막 handoffQueue 타입의 구현체이다.  
 BlockingQueue를 구현하고 있지만 전통적인 BlockingQueue와는 다르다.
@@ -184,7 +184,7 @@ NHN Academy에서 HikariCP 대신 DBCP2를 사용하라고 했을 때 그 이유
 현재 inkbridge 프로젝트에 설정된 커넥션풀 설정은 아래와 같다.
 세밀한 설정을 위해서 DBCP2를 사용해야 한다는 의견과 함께 아래 우리 프로젝트에서 커넥션풀을 설정한 내용을 확인해보자.  
 
-![inkbridge-connection_pool](img/inkbridge-connection_pool.png)
+![inkbridge-connection_pool](img/connectionpool/inkbridge-connection_pool.png)
 
 - dataSource.setInitialSize(20)
   - 커넥션 풀 시작 시, 생성할 초기 커넥션 개수이다. 기본값 0
