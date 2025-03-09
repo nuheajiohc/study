@@ -54,6 +54,7 @@
 - [Maven 프로젝트에서 Lombok이 인식되지 않는 문제 해결](https://nuheajiohc.tistory.com/40)
 - [Logback 설정 실수로 인해 로그가 출력되지 않은 문제 해결 과정](https://nuheajiohc.tistory.com/41)
 - [DBCP2에서 HikariCP로 전환](https://nuheajiohc.tistory.com/42)
+- [설정파일 암호화 로직 리팩토링으로 의존성 분리와 API 호출 최적화하기.md](project/inkbridge/%EC%84%A4%EC%A0%95%ED%8C%8C%EC%9D%BC%20%EC%95%94%ED%98%B8%ED%99%94%20%EB%A1%9C%EC%A7%81%20%EB%A6%AC%ED%8C%A9%ED%86%A0%EB%A7%81%EC%9C%BC%EB%A1%9C%20%EC%9D%98%EC%A1%B4%EC%84%B1%20%EB%B6%84%EB%A6%AC%EC%99%80%20API%20%ED%98%B8%EC%B6%9C%20%EC%B5%9C%EC%A0%81%ED%99%94%ED%95%98%EA%B8%B0.md)
 
 ## Docker
 - [Docker 기본 개념](https://nuheajiohc.tistory.com/26)
