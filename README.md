@@ -55,6 +55,7 @@
 - [Logback 설정 실수로 인해 로그가 출력되지 않은 문제 해결 과정](https://nuheajiohc.tistory.com/41)
 - [DBCP2에서 HikariCP로 전환](https://nuheajiohc.tistory.com/42)
 - [설정파일 암호화 로직 리팩토링으로 의존성 분리와 API 호출 최적화하기](https://nuheajiohc.tistory.com/43)
+- [RestTemplate에서 AWS S3 SDK로 전환한 이유 및 이미지 조회 방식 개선.md](project/inkbridge/RestTemplate%EC%97%90%EC%84%9C%20AWS%20S3%20SDK%EB%A1%9C%20%EC%A0%84%ED%99%98%ED%95%9C%20%EC%9D%B4%EC%9C%A0%20%EB%B0%8F%20%EC%9D%B4%EB%AF%B8%EC%A7%80%20%EC%A1%B0%ED%9A%8C%20%EB%B0%A9%EC%8B%9D%20%EA%B0%9C%EC%84%A0.md)
 
 ## Docker
 - [Docker 기본 개념](https://nuheajiohc.tistory.com/26)
