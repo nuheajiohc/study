@@ -1,8 +1,8 @@
-# RestTemplate에서 AWS S3 SDK로 전환한 이유 및 이미지 조회 방식 개선
+# Object Storage 업로드 방식 변경 및 이미지 조회 최적화
 
 ## 1. 기존 방식: RestTemplate으로 업로드
 
-## 1.1 RestTemplate을 이용한 업로드의 문제점
+### 1.1 RestTemplate을 이용한 업로드의 문제점
 기존 InkBridge는 **NHN Cloud Object Storage**를 사용하여 이미지를 업로드하고 있었으며
 업로드 방식은 **RestTemplate**을 이용하여 **직접 API 요청을 보내는 방식**을 사용하고 있었다.
 
@@ -11,7 +11,7 @@
 - **인증 처리 번거로움** → **X-Auth-Token**을 수동으로 발급 받아야 하고 토큰 갱신 로직이 필요하다.
 - **대용량 파일 확장성 부족** → 현재는 책 사진, 리뷰 사진 등의 작은 이미지만 처리하는데 나중에 동영상 등 대용량 파일을 업로드할 경우 코드의 변화가 클 수 있다.
 
-## 1.2 기존 코드 구조
+### 1.2 기존 코드 구조
 ![old-objectStorage-structure](img/objectstorage/old-objectStorage-structure.png)  
 ![upload_object](img/objectstorage/upload_object.png)  
 ![authService](img/objectstorage/authService.png)
@@ -20,7 +20,7 @@
 1.1 에서 언급한 것처럼 직접 인증 토큰을 발급받고, restTemplate로 파일을 업로드 하는 것은 꽤나 번거로운 작업으로 보인다.
 
 ## 2. 파일 업로드 방식 S3 SDK로 전환
-[NHN Cloud ObjectStorage - S3 활용 가이드](https://docs.nhncloud.com/ko/Storage/Object%20Storage/ko/s3-api-guide/#_20)에서 NHN Cloud는 AWS의 S3 API와 호환된다고 한다.
+[NHN Cloud ObjectStorage - S3 활용 가이드](https://docs.nhncloud.com/ko/Storage/Object%20Storage/ko/s3-api-guide/)에서 NHN Cloud는 AWS의 S3 API와 호환된다고 한다.
 아무래도 AWS가 클라우드 시장에서 가장 큰 점유율을 차지하기 떄문에 AWS를 사용하던 고객의 유입을 늘리려는 전략으로 보인다.  
 또한 NHN Cloud말고도 Open Stack 등의 다른 크라우드 기업들도 S3를 지원하고 있는데 S3가 클라우드 업계의 표준이 되어가는 것 같다.
 
@@ -59,7 +59,7 @@
 바퀴를 재발명 하지 말라고 했듯이 잘 만들어진 S3 SDK를 활용하는 것이 생산성에 도움이 된다.
 
 
-## **4️⃣ 이미지 조회 방식 개선 (메모리 절약 & 성능 최적화)**
+## 이미지 조회 방식 개선 (메모리 절약 & 성능 최적화)
 
 ### 4.1 기존 방식 코드 (백엔드에서 `byte[]`로 변환 후 반환)
 ![downloadObject.png](img/objectstorage/downloadObject.png)
@@ -94,6 +94,6 @@
 ```
 위 의존성을 추가하면 바로 S3 SDK를 사용할 수 있다.
 
-### 정리
+## 정리
 - RestTemplate 대신 S3 SDK 사용 -> 클라우드 플랫폼 전환이 쉬워짐, 비즈니스 로직에 더 집중할 수 있음  
 - 클라이언트에서 URL을 사용하여 직접 조회 -> 백엔드에서 이미지 처리에 대한 메모리 절약
