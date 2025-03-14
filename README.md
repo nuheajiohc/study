@@ -35,6 +35,7 @@
 
 ## Network
 - [인터넷 네트워크 구조](https://nuheajiohc.tistory.com/39)
+- [DNS 동작 원리](https://nuheajiohc.tistory.com/45)
 
 ## Software-Common
 - [JSON(JavaScript Object Notation)](https://nuheajiohc.tistory.com/4)
