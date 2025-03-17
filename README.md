@@ -37,6 +37,9 @@
 - [인터넷 네트워크 구조](https://nuheajiohc.tistory.com/39)
 - [DNS 동작 원리](https://nuheajiohc.tistory.com/45)
 
+## OS
+- [유니코드와 UTF-8](https://nuheajiohc.tistory.com/46)
+
 ## Software-Common
 - [JSON(JavaScript Object Notation)](https://nuheajiohc.tistory.com/4)
 - [XML(eXtensible Markup Language)이란](https://nuheajiohc.tistory.com/7)
