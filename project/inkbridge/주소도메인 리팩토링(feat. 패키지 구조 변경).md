@@ -1,4 +1,4 @@
-# 주소 도메인 리팩토링
+# 주소 도메인 리팩토링(feat. 패키지 구조 변경)
 
 주소 도메인의 구조에 문제점이 있다고 판단하여 리팩토링을 진행했다.  
 이 글에서는 ERD와 코드 구조를 개선하고, 어떤 문제를 어떻게 해결했는지 전반적인 리팩토링 과정을 작성해보겠다.
@@ -8,6 +8,7 @@
 - **기존 코드 구조 개선 및 기능 추가**
   - 주소 최대 10개 제한 로직 추가(기존 요구사항에 있던 내용)
   - 기본 배송지 설정 로직 추가(개인적인 추가)
+  - 동시성 문제 해결
 - **계층 단위로 나뉘어진 패키지 구조 -> 도메인 기반 패키지 구조**
   - 추후 모듈 분리를 고려한 구조로 설계
 
@@ -18,7 +19,7 @@
 기존 주소 도메인은 `general_address`, `member_address` 두 테이블로 분리되어 있었다.  
 아마 아파트 등의 **공통 주소를 공유하는 사용자를 고려한 정규화**로 추정된다.
 
-하지만 이 구조에 의해서 여러 문제가 발생했다.
+하지만 이 구조에 의해서 여러 문제가 발생했다. 테이블에서 비롯되는 문제들만 먼저 정리해보겠다.
 
 ### 문제점
 1. **주소 중복 제거 효과 미미**
@@ -35,10 +36,10 @@
 ![new-address_erd](img/address/new-address_erd.png)
 
 ### 개선 사항
-- `general_address`, `member_address` 통합 → 단일 `address` 테이블
+- `general_address`, `member_address` 테이블 → 단일 `address` 테이블로 통합
 - 비정규화로 불필요한 JOIN제거
 
-> 기존 구조가 여러 사용자가 주소를 공유한다는 점에서 비정규화가 아니라 올바른 구조로 바꾸었다고 볼 수도 있을 것 같다.
+> 기존 구조가 여러 사용자가 주소를 공유한다는 점에서 비정규화라기보다는 올바른 구조로 바꾸었다고 볼 수 있을 것 같다.
 
 ### 새로운 컬럼 추가
 - `is_default` : 기본 배송지 여부 설정
@@ -66,12 +67,11 @@ com.nhnacademy.inkbridge.backend
 **개선 패키지 구조**
 ```
 // 리팩토링하면서 구조는 바뀔 수 있음
-.
-└── com.nhnacademy.inkbridge.backend
-    ├── api         # controller 등 web 계층
-    ├── domain      # service + 비즈니스 로직
-    ├── infrastructure # 외부 연동 (cloud, elasticSearch 등)
-    └── storage     # RDB, Redis, NoSQL 등
+com.nhnacademy.inkbridge.backend
+    ├── api              # controller 등 web 계층
+    ├── domain           # service + 비즈니스 로직
+    ├── infrastructure   # 외부 연동 (cloud, elasticSearch 등)
+    └── storage          # RDB, Redis, NoSQL 등
 ```
 
 #### 구조 변경 이유
@@ -81,7 +81,7 @@ com.nhnacademy.inkbridge.backend
 - 리팩토링 시 도메인 흐름 파악이 어려움
   - 수십 개의 클래스가 각기 다른 계층에 흩어져 있어서 일일이 찾아다녀야함
 - 클래스 간 응집도 부족
-  - 같은 기능을 하더라도 서로 다른 패키지에 위치해 있어서 기능 파악이 힘듦
+  - 같은 기능의 역할을 하더라도 서로 다른 패키지에 위치해 있어서 기능 파악이 힘듦
 
 #### 개선 방향
 새로운 구조는 겉보기에는 기존 구조와 유사해 보이지만 아래와 같은 차이점이 있다.
@@ -94,7 +94,7 @@ com.nhnacademy.inkbridge.backend
   - 기존 프로젝트의 CI/CD 시간이 길었던 기억 때문에 멀티 모듈을 통해 시간 최적화 기대
 - 의존 방향
   - 기존: 기존에는 `controller -> service -> repository`으로 의존방향이 흐름
-  - 변경: domain(service, 도메인 로직)에 `controller`와 `repository` 등이 의존하도록 설계, 기술 변경에 유연하게 대응하기 위해
+  - 변경: 기술 변경에 유연하게 대응하기 위해 domain(service, 도메인 로직)에 `controller`와 `repository` 등이 의존하도록 설계
 
 
 ### 기존 서비스 클래스 분석
@@ -104,15 +104,15 @@ com.nhnacademy.inkbridge.backend
 #### 문제점
 - **동시성 문제**
   - updateAddress 메서드에서 GeneralAddress 저장 시 동일한 주소를 두 사용자가 동시에 입력하면 중복 저장이 발생 가능
-- **조회 시 풀 스캔**
+- **공통 주소 조회 시 풀 스캔**
   - updateAddress 메서드 GeneralAddressRepository조회 시 우편 번호와 주소로 조회하므로 풀 스캔 발생
   - 사용자 수에 비례하여 탐색 시간 선형 증가
   - zip_code + address에 인덱스를 설정하면 생성, 수정 성능이 저하되고, 더 나은 방식이 있어서 리팩토링하면서 수정함
 - **수정 시 예외 발생 가능성**
   - 동시성 문제에 의해 두 개의 GeneralAddress가 저장되면 updateAddress 메서드에서 조회할 때 Optional로 처리 하기 때문에 `NonUniqueResultException` 위험
-- 가독성
-  - 가독성은 주관적인 측면이지만 가독성 개선이 가능할 것 같아서 수정 진행
-- 주소 조회시 불필요한 조건
+- **가독성**
+  - 가독성은 주관적인 측면이지만 흐름 파악을 더 쉽게 하도록 변경
+- **주소 조회시 불필요한 조건**
   - 전반적인 메서드에서 주소를 조회할 때 userId와 addressId로 조회
   - userId는 외래키, addressId는 기본키이므로 addressId만으로도 조회 가능
 
@@ -123,8 +123,8 @@ com.nhnacademy.inkbridge.backend
 | `address_id`만 조건         | simple      | `const`  | PRIMARY       | `PRIMARY` | 8       | 1    | 
 | `userId + addressId` 조건   | simple      |  `const` | PRIMARY,<br/>FKeslc8586cwl3ej73mv7gr83x2  | `PRIMARY` | 8       | 1    |
 
-결과를 비교해봤는데 인덱스 후보만 userId, addressId 조건 이 외래키인 userId를 더 가지고있는 것 말고는 전부 같다.  
-후보는 두 개여도 옵티마이저는 기본키만 사용해도 식별이 가능하다고 생각하여 기본키만 사용하여 조회를 진행한다.  
+결과를 비교해봤는데 userId, addressId 조건이 addres_id 조건보다 사용가능한 키에서 외래키인 userId를 하나 더 가지고있는 것 말고는 전부 같다.
+사용 가능한 인덱스는 두 개여도 옵티마이저는 기본키만 사용해도 식별이 가능하다고 생각하여 기본키만 사용하여 조회를 진행한다.
 결과는 동일해도 userId는 불필요한 조건이기때문에 제거해주겠다.
 
 
@@ -148,7 +148,7 @@ com.nhnacademy.inkbridge.backend
 - **createAddress**메서드 
   - 주소 최대 개수를 확인하고, 기본 배송지 설정을 처리한 후 주소를 저장한다.
   - 주소 저장 후 반환하는 것은 addressId이다. 
-  - 주소를 저장한 후 새로고침이 되면은 상관없겠지만 동적으로 주소를 바로 추가하는 경우 id가 없으면 수정이나 삭제가 불가능하다. UI에 의존하는 개발을 하기보다는 유연하게 상황에 대응하기 위해 이렇게 구현했다.
+  - 주소를 저장한 후 새로고침이 되면 상관없겠지만 동적으로 주소를 바로 추가하는 경우 id가 없으면 수정이나 삭제가 불가능하다. UI에 의존하는 개발을 하기보다는 유연하게 상황에 대응하기 위해 이렇게 구현했다.
 - **updateAddress** 메서드
   - 주소를 수정할 때 기본 배송지에 관한 로직을 처리한 후 주소를 수정한다.
   - 수정할 때는 이미 프론트에서 주소 정보를 다 알고 있기 때문에 데이터를 따로 응답하지 않았다.
@@ -169,7 +169,7 @@ com.nhnacademy.inkbridge.backend
   - 공통 주소 조회 시 생길 수 있는 예외 상황 해결
 - 공통 주소 조회 시 풀스캔하는 현상
   - 테이블 구조 수정으로 모든 로직 기본키로 조회
-- UI에 의존하는 코드 -> 어느 UI에도 적용가능한 코드
+- UI에 의존하는 코드 -> UI 상관없이 적용가능한 코드
 - 응집도 낮은 패키지 구조 -> 확장성 있는 패키지 구조로 변경
 - 기본 배송지 추가, 주소 개수 제한 조건 추가
 

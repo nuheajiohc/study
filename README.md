@@ -60,6 +60,7 @@
 - [DBCP2에서 HikariCP로 전환](https://nuheajiohc.tistory.com/42)
 - [설정파일 암호화 로직 리팩토링으로 의존성 분리와 API 호출 최적화하기](https://nuheajiohc.tistory.com/43)
 - [Object Storage 업로드 방식과 이미지 조회 방식 변경](https://nuheajiohc.tistory.com/44)
+- [주소 도메인 리팩토링(feat. 패키지 구조 변경)](https://nuheajiohc.tistory.com/47)
 
 ## Docker
 - [Docker 기본 개념](https://nuheajiohc.tistory.com/26)
