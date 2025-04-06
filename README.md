@@ -61,6 +61,7 @@
 - [설정파일 암호화 로직 리팩토링으로 의존성 분리와 API 호출 최적화하기](https://nuheajiohc.tistory.com/43)
 - [Object Storage 업로드 방식과 이미지 조회 방식 변경](https://nuheajiohc.tistory.com/44)
 - [주소 도메인 테이블 구조 리팩토링으로 성능·동시성 문제 해결](https://nuheajiohc.tistory.com/47)
+- [요청 DTO에서 ConstraintValidator로 Enum 검증하기](https://nuheajiohc.tistory.com/48)
 
 ## Docker
 - [Docker 기본 개념](https://nuheajiohc.tistory.com/26)
