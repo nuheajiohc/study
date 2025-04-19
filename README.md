@@ -47,6 +47,10 @@
 - [JSON(JavaScript Object Notation)](https://nuheajiohc.tistory.com/4)
 - [XML(eXtensible Markup Language)이란](https://nuheajiohc.tistory.com/7)
 
+## Tech-Insight
+- [계층 구조 테이블 설계 방식 비교](https://nuheajiohc.tistory.com/51)
+
+
 ## 프로젝트
 ### 서블릿 + 쇼핑몰
 - [Servlet으로 쇼핑몰 프로젝트 만들기 다시 시작](https://nuheajiohc.tistory.com/23)
