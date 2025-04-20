@@ -70,6 +70,7 @@
 - [주소 도메인 테이블 구조 리팩토링으로 성능·동시성 문제 해결](https://nuheajiohc.tistory.com/47)
 - [요청 DTO에서 ConstraintValidator로 Enum 검증하기](https://nuheajiohc.tistory.com/48)
 - [이미지 업로드와 DB 저장에 대한 고민과 해결과정](https://nuheajiohc.tistory.com/49)
+- [카테고리 구조 리팩토링: N+1 문제 해결과 계층 구조 설계 개선](https://nuheajiohc.tistory.com/52)
 
 ## Docker
 - [Docker 기본 개념](https://nuheajiohc.tistory.com/26)
