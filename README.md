@@ -16,7 +16,7 @@
 
 ## JPA
 - [@ManyToOne의 Optional 속성에 따라 변경되는 JOIN 방식 (LEFT JOIN vs INNER JOIN)](https://nuheajiohc.tistory.com/50)
-
+- [JPA save와 saveAll 비교(feat. @Transactional의 영향)](https://nuheajiohc.tistory.com/53)
 ## Servlet, JSP
 - [Tomcat 버전별 Jakarta 설정 및 서블릿 디펜던시 설정](https://nuheajiohc.tistory.com/12)
 - [WAS(Tomcat)이 필요한 이유](https://nuheajiohc.tistory.com/19)
