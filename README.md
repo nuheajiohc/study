@@ -72,6 +72,7 @@
 - [이미지 업로드와 DB 저장에 대한 고민과 해결과정](https://nuheajiohc.tistory.com/49)
 - [카테고리 구조 리팩토링: N+1 문제 해결과 계층 구조 설계 개선](https://nuheajiohc.tistory.com/52)
 - [Java 11에서 17, Maven에서 Gradle, Spring Boot 2.7에서 3.4까지 마이그레이션](https://nuheajiohc.tistory.com/56)
+- [생일 쿠폰 배치 성능 99.7% 개선 과정 (3시간 48분에서 43초까지).md](project/inkbridge/%EC%83%9D%EC%9D%BC%20%EC%BF%A0%ED%8F%B0%20%EB%B0%B0%EC%B9%98%20%EC%84%B1%EB%8A%A5%2099.7%25%20%EA%B0%9C%EC%84%A0%20%EA%B3%BC%EC%A0%95%20%283%EC%8B%9C%EA%B0%84%2048%EB%B6%84%EC%97%90%EC%84%9C%2043%EC%B4%88%EA%B9%8C%EC%A7%80%29.md)
 
 ## Docker
 - [Docker 기본 개념](https://nuheajiohc.tistory.com/26)
