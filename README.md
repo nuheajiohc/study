@@ -73,6 +73,7 @@
 - [카테고리 구조 리팩토링: N+1 문제 해결과 계층 구조 설계 개선](https://nuheajiohc.tistory.com/52)
 - [Java 11에서 17, Maven에서 Gradle, Spring Boot 2.7에서 3.4까지 마이그레이션](https://nuheajiohc.tistory.com/56)
 - [생일 쿠폰 배치 성능 99.7% 개선 과정 (3시간 48분에서 43초까지)](https://nuheajiohc.tistory.com/57)
+- [선착순 쿠폰 발급 동시성 제어와 성능 개선](https://nuheajiohc.tistory.com/58)
 
 ## Docker
 - [Docker 기본 개념](https://nuheajiohc.tistory.com/26)
