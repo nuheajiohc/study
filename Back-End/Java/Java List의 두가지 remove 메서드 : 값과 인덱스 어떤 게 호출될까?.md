@@ -1,4 +1,4 @@
-# Java List의 두가지 remove 메서드 : 값과 인덱스 어떤 게 호출될까?
+# Java List의 두가지 remove 메서드 : 제네릭이 Integer라면 값과 인덱스 중 어떤 게 호출될까?
 
 ## List 계층 구조
 
