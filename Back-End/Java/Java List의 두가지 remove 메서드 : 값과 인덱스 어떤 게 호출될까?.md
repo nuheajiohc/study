@@ -4,7 +4,7 @@
 
 <p align="center"><img width="492" alt="image" src="https://github.com/user-attachments/assets/3c967a85-4137-4366-acd3-df36ee2f2c1e" /></p>
 
-`Collection<E>` 인터페이스에는 `boolean remove(Object o)` 메서드가 정의되어 있다.
+`Collection<E>` 인터페이스에는 `boolean remove(Object o)` 메서드가 정의되어 있다.  
 `List<E>` 인터페이스에는 `E remove(int index)` 메서드가 정의되어 있다.
 
 여기서 의문이 들었던 것은 아래와 같은 상황에서 어떤 메서드가 호출되는가 하는 것이었다.
