@@ -2,6 +2,9 @@
 마크다운으로 작성한 글들을 정리해서 블로그에 올리고 있습니다.  
 아래 링크를 클릭하면 블로그로 연결되고, 아직 정리하지 않은 글은 마크다운으로 연결됩니다.
 
+## 자바
+- [Java List의 두가지 remove 메서드 : 값과 인덱스 어떤 게 호출될까?.md](Back-End/Java/Java%20List%EC%9D%98%20%EB%91%90%EA%B0%80%EC%A7%80%20remove%20%EB%A9%94%EC%84%9C%EB%93%9C%20%3A%20%EA%B0%92%EA%B3%BC%20%EC%9D%B8%EB%8D%B1%EC%8A%A4%20%EC%96%B4%EB%96%A4%20%EA%B2%8C%20%ED%98%B8%EC%B6%9C%EB%90%A0%EA%B9%8C%3F.md)
+
 ## 스프링
 - [서블릿 컨테이너 초기화와 스프링의 처리 방식](https://nuheajiohc.tistory.com/20)
 - [BeanFactory와 ApplicationContext](https://nuheajiohc.tistory.com/21)
