@@ -1,8 +1,7 @@
 # Java List의 두가지 remove 메서드 : 값과 인덱스 어떤 게 호출될까?
 
 ## List 계층 구조
-
-![List 계층 구조](https://github.com/user-attachments/assets/67def009-a474-44bd-8be8-53621ba643eb")
+<img width="958" alt="List" src="https://github.com/user-attachments/assets/9bfa9b2a-dd09-4c42-b67b-360ba2772ec8" />
 
 `Collection<E>` 인터페이스에는 `boolean remove(Object o)` 메서드가 정의되어 있다.
 `List<E>` 인터페이스에는 `E remove(int index)` 메서드가 정의되어 있다.
