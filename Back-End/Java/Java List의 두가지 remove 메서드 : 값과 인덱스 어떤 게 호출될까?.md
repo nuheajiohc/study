@@ -26,3 +26,6 @@ numbers.remove(Integer.valueOf(1)); // 또는
 numbers.remove((Integer) 1);
 ```
 이렇게 타입을 명시해줘야 `remove(Object o)` 메서드가 호출된다.
+
+
+> 어떻게 생각해보면 별거 아니긴 한데 공부하다가 순간 흠칫해서 정리해두기로 했다..
