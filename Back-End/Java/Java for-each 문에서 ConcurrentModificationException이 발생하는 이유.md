@@ -51,7 +51,9 @@ iterator는 원본 컬렉션을 참조해서 순회를 하는데, 중간에 원�
 
 **ArrayList - remove 코드**
 
+<p align="center">
 <img width="648" alt="arraylist-remove" src="https://github.com/user-attachments/assets/658c8b37-3529-4e0f-a7d1-1420dc28cfdd" />
+</p>
 
 ArrayList는 내부적으로 배열로 구현되어 있어서, 배열과 크기를 복사한다.  
 remove의 대상이 null이면 for문을 돌면서 null인 요소를 찾았거나 null이 아니라면 객체의 동등성을 확인하면 fastRemove를 호출한다. 그 외에는 false를 반환한다.  
@@ -66,7 +68,9 @@ remove에서 중요한 메서드는 fastRemove 메서드이다.
 그러면 이번에는 ArrayList에 정의되어있는 iterator를 살펴보자.  
 **ArrayList - iterator 코드**  
 
+<p align="center">
 <img width="609" alt="arraylist-iter-next" src="https://github.com/user-attachments/assets/921454a0-272a-4fe8-8edc-998c00327db2" />
+</p>
 
 iterator는 내부적으로 modCount를 복사해서 expectedModCount에 담아 가지고 있다.  
 next() 메서드를 호출할 때 내부적으로 `checkForComodification` 메서드를 호출한다.
@@ -90,8 +94,10 @@ while (iterator.hasNext()) {
 이 코드가 잘 동작하는 이유는 아래의 코드를 보면 알 수 있다.
 
 **ArrayList - iterator remove 코드**  
-<img width="494" alt="arraylist-iter-remove" src="https://github.com/user-attachments/assets/eb5086cd-1c5d-442c-a3ae-76b81dae9120" />
 
+<p align="center">
+<img width="494" alt="arraylist-iter-remove" src="https://github.com/user-attachments/assets/eb5086cd-1c5d-442c-a3ae-76b81dae9120" />
+</p>
 
 다른 메서드처럼 `checkForComodification` 메서드를 호출한 뒤 try블록에서 ArrayList의 remove를 호출하는 것을 볼 수 있다.(이 remove는 index를 받아서 요소를 삭제하는 메서드이다. 하지만 내부적으로 fastRemove를 호출한다는 게 핵심)
 하지만 여기서 끝나는 것이 아니라 커서의 위치를 바꿔주고 expectedModCount에 modCount를 할당해준다. 그래서 iterator의 다른 메서드에서 checkForComodification 메서드를 호출하더라도 예외가 발생하지 않는다.
@@ -106,9 +112,11 @@ transactions.removeIf(transaction -> Character.isDigit(transaction.getReferenceC
 엄청 간단해졌다. 
 이 코드도 내부적으로는 위의 복잡한 코드처럼 생겼다. 여기서는 Collection 인터페이스에 default 메서드로 정의된 removeif 메서드를 사용한다.
 
-**Collection - removeIf 코드**  
-<img width="552" alt="스크린샷 2025-07-29 오전 9 29 23" src="https://github.com/user-attachments/assets/e68d0b1c-daf5-429b-92e1-ecf14357165d" />
+**Collection - removeIf 코드**
 
+<p align="center">
+<img width="552" alt="스크린샷 2025-07-29 오전 9 29 23" src="https://github.com/user-attachments/assets/e68d0b1c-daf5-429b-92e1-ecf14357165d" />
+</p>
 
 이렇게 for-each 문에서 ConcurrentModificationException이 발생하는 이유와 해결 방법을 알아보았다.    
 앞으로 순회하면서 요소를 삭제할 때는 removeIf 메서드를 활용하도록 하자.
