@@ -4,6 +4,7 @@
 
 ## 자바
 - [Java List의 두가지 remove 메서드 : 값과 인덱스 어떤 게 호출될까?](https://nuheajiohc.tistory.com/59)
+- [Java for-each 문에서 ConcurrentModificationException이 발생하는 이유.md](Back-End/Java/Java%20for-each%20%EB%AC%B8%EC%97%90%EC%84%9C%20ConcurrentModificationException%EC%9D%B4%20%EB%B0%9C%EC%83%9D%ED%95%98%EB%8A%94%20%EC%9D%B4%EC%9C%A0.md)
 
 ## 스프링
 - [서블릿 컨테이너 초기화와 스프링의 처리 방식](https://nuheajiohc.tistory.com/20)
