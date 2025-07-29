@@ -120,3 +120,6 @@ transactions.removeIf(transaction -> Character.isDigit(transaction.getReferenceC
 
 이렇게 for-each 문에서 ConcurrentModificationException이 발생하는 이유와 해결 방법을 알아보았다.    
 앞으로 순회하면서 요소를 삭제할 때는 removeIf 메서드를 활용하도록 하자.
+
+## 결론
+> for-each 문에서 컬렉션 요소를 직접 제거하면 내부적으로 사용하는 Iterator의 변경 감지 메커니즘(modCount와 expectedModCount 불일치)으로 인해 ConcurrentModificationException이 발생하므로, 안전하게 제거하려면 iterator.remove()나 removeIf()와 같은 방식으로 처리해야 한다.
