@@ -69,7 +69,7 @@
 - [Maven 프로젝트에서 Lombok이 인식되지 않는 문제 해결](https://nuheajiohc.tistory.com/40)
 - [Logback 설정 실수로 인해 로그가 출력되지 않은 문제 해결 과정](https://nuheajiohc.tistory.com/41)
 - [DBCP2에서 HikariCP로 전환](https://nuheajiohc.tistory.com/42)
-- [설정파일 암호화 로직 리팩토링으로 의존성 분리와 API 호출 최적화하기](https://nuheajiohc.tistory.com/43)
+- [설정파일 암호화 로직 리팩토링으로 의존성 분리](https://nuheajiohc.tistory.com/43)
 - [Object Storage 업로드 방식과 이미지 조회 방식 변경](https://nuheajiohc.tistory.com/44)
 - [주소 도메인 테이블 구조 리팩토링으로 성능·동시성 문제 해결](https://nuheajiohc.tistory.com/47)
 - [요청 DTO에서 ConstraintValidator로 Enum 검증하기](https://nuheajiohc.tistory.com/48)
