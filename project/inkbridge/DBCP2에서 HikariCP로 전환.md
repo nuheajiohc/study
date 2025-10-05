@@ -12,7 +12,7 @@ DBCP는 Apache Commons 프로젝트에서 제공하는 커넥션 풀이다. DBCP
 DBCP2는 DBCP1의 후속 버전으로 2014년에 출시되어 성능 개선 및 버그 수정이 이루어졌다.  
 
 ### 1.1 내부구조
-![dbcp2-GenericObjectPool](img/connectionpool/dbcp2-GenericObjectPool.png)
+<img width="1070" height="264" alt="image" src="https://github.com/user-attachments/assets/48f7576b-5d32-4794-b15e-42deb2210448" />
 
 위 클래스는 DBCP2의 메인이 되는 클래스이다. 각 필드의 역할을 살펴보자
 - ONAME_BASE
