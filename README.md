@@ -79,6 +79,9 @@
 - [생일 쿠폰 배치 성능 99.7% 개선 과정 (3시간 48분에서 43초까지)](https://nuheajiohc.tistory.com/57)
 - [선착순 쿠폰 발급 동시성 제어와 성능 개선](https://nuheajiohc.tistory.com/58)
 
+### TechIn
+- [반복되는 try-catch, ThrowingSupplier로 정리하기](https://nuheajiohc.tistory.com/62)
+
 ## Docker
 - [Docker 기본 개념](https://nuheajiohc.tistory.com/26)
 - [자주 사용하는 Docker 명령어](https://nuheajiohc.tistory.com/27)
