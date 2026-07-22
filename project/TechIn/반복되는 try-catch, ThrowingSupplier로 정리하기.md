@@ -18,7 +18,6 @@ try {
 
 이번 글에서는 반복되는 `try-catch`를 `ThrowingSupplier`로 정리한 과정을 정리해보려고 한다.
 
----
 
 ## 문제 상황
 
@@ -68,9 +67,6 @@ try {
 }
 ```
 
-이런 반복이 많아지면 메서드의 핵심 의도가 흐려진다.
-
----
 
 ## 반복되는 try-catch의 문제
 
@@ -111,7 +107,6 @@ throw new IllegalArgumentException("C 작업에 실패했습니다.", e);
 
 나중에 예외 메시지 형식을 바꾸거나, 공통 로깅을 추가하거나, 특정 예외 타입으로 통일하고 싶다면 반복된 `catch` 블록을 모두 찾아서 수정해야 한다.
 
----
 
 ## Supplier를 사용하면 되지 않을까?
 
@@ -325,182 +320,6 @@ public String methodB() {
 }
 ```
 
-이 방식의 장점은 공통 실행 구조는 재사용하면서도, 예외 의미는 호출부에서 명확하게 정할 수 있다는 점이다.
-
-```text
-공통화한 것:
-- try
-- catch
-- supplier 실행
-- exceptionMapper 적용
-
-호출부에 남긴 것:
-- 실제 실행할 작업
-- 실패 시 어떤 예외로 바꿀지
-```
-
-반복은 줄이되, 예외의 의미까지 뭉개지는 것을 피할 수 있다.
-
----
-
-## 리팩토링 전후 비교
-
-리팩토링 전에는 다음과 같은 코드가 반복된다.
-
-```java
-public String methodA() {
-    try {
-        return externalOperationA();
-    } catch (Exception e) {
-        throw new IllegalStateException("A 작업에 실패했습니다.", e);
-    }
-}
-
-public String methodB() {
-    try {
-        return externalOperationB();
-    } catch (Exception e) {
-        throw new IllegalArgumentException("B 작업에 실패했습니다.", e);
-    }
-}
-```
-
-리팩토링 후에는 다음처럼 바뀐다.
-
-```java
-public String methodA() {
-    return runCatching(
-        () -> externalOperationA(),
-        e -> new IllegalStateException("A 작업에 실패했습니다.", e)
-    );
-}
-
-public String methodB() {
-    return runCatching(
-        () -> externalOperationB(),
-        e -> new IllegalArgumentException("B 작업에 실패했습니다.", e)
-    );
-}
-```
-
-처음 보면 람다와 함수형 인터페이스 때문에 오히려 낯설 수 있다.
-하지만 반복되는 `try-catch`가 많아질수록 차이가 분명해진다.
-
-리팩토링 전 코드는 예외 처리 구조가 메서드마다 흩어져 있다.
-
-리팩토링 후 코드는 예외 처리 구조가 `runCatching()`으로 모이고, 각 메서드에는 실행할 작업과 예외 변환 정책만 남는다.
-
----
-
-## 이 방식의 장점
-
-`ThrowingSupplier`를 사용하면 다음 장점이 있다.
-
-```text
-1. 반복되는 try-catch를 줄일 수 있다.
-2. 핵심 로직이 더 잘 보인다.
-3. checked exception을 던지는 작업도 람다로 전달할 수 있다.
-4. 예외 변환 정책을 한 곳에서 다룰 수 있다.
-5. 필요하면 호출부에서 예외 타입과 메시지를 다르게 지정할 수 있다.
-```
-
-특히 중요한 점은 단순히 코드 줄 수를 줄였다는 것이 아니다.
-
-핵심은 **반복되는 예외 처리 패턴을 추상화했다는 것**이다.
-
-```text
-Before:
-각 메서드가 try-catch 구조를 직접 가짐
-
-After:
-공통 try-catch 구조는 runCatching()이 담당
-각 메서드는 작업과 예외 의미만 전달
-```
-
-이렇게 하면 메서드의 의도가 더 잘 드러난다.
-
----
-
-## 이 방식의 단점
-
-물론 `ThrowingSupplier`가 항상 좋은 것은 아니다.
-
-작은 코드에 무리하게 적용하면 오히려 복잡해 보일 수 있다.
-
-예를 들어 `try-catch`가 한두 군데뿐이라면 굳이 새로운 함수형 인터페이스를 만들 필요가 없을 수 있다.
-
-```java
-try {
-    return operation();
-} catch (Exception e) {
-    throw new RuntimeException(e);
-}
-```
-
-이 정도 코드가 한두 곳만 있다면 그냥 명시적으로 작성하는 편이 더 읽기 쉽다.
-
-또한 catch 블록에서 단순 예외 변환이 아니라 복구 로직을 수행한다면 `ThrowingSupplier`로 감싸는 것이 적절하지 않을 수 있다.
-
-```java
-try {
-    return operation();
-} catch (SpecificException e) {
-    rollbackSomething();
-    notifySomething();
-    return fallbackValue();
-}
-```
-
-이런 경우는 공통화하기보다 명시적으로 작성하는 편이 낫다.
-
-즉, `ThrowingSupplier`는 모든 예외 처리를 대체하는 도구가 아니다.
-
-다음과 같은 경우에 적합하다.
-
-```text
-- 같은 try-catch 패턴이 여러 곳에서 반복된다.
-- catch 블록에서 하는 일이 단순한 예외 변환이다.
-- checked exception 때문에 람다 사용이 어렵다.
-- 핵심 로직과 예외 처리 코드를 분리하고 싶다.
-```
-
----
-
-## Checked Exception과 함수형 인터페이스
-
-이번 리팩토링을 하면서 다시 느낀 점은 자바의 checked exception과 함수형 인터페이스가 항상 자연스럽게 맞물리지는 않는다는 것이다.
-
-자바 기본 함수형 인터페이스들은 대부분 checked exception을 던지지 않는다.
-
-예를 들어:
-
-```java
-Supplier<T>
-Function<T, R>
-Consumer<T>
-Runnable
-```
-
-이 인터페이스들의 메서드는 기본적으로 `throws Exception`을 선언하지 않는다.
-
-그래서 checked exception을 던지는 메서드를 람다로 전달하려고 하면 자주 막힌다.
-
-```java
-// 컴파일 불가 가능성
-() -> checkedExceptionOperation()
-```
-
-이럴 때 선택지는 몇 가지다.
-
-```text
-1. 람다 내부에서 try-catch를 작성한다.
-2. checked exception을 던질 수 있는 커스텀 함수형 인터페이스를 만든다.
-3. 외부 라이브러리의 ThrowingFunction, ThrowingSupplier 등을 사용한다.
-```
-
-이번에는 의존성을 추가할 정도의 문제는 아니라고 판단했고, 필요한 형태가 단순했기 때문에 직접 `ThrowingSupplier`를 정의했다.
-
----
 
 ## 최종 코드
 
@@ -565,13 +384,5 @@ public String methodB() {
 반복되는 try-catch를 제거한 것이 아니라,
 반복되는 예외 처리 패턴에 이름을 붙인 것이다.
 ```
-
-이번 리팩토링을 통해 메서드는 더 짧아졌고, 예외 처리 방식은 더 일관되게 정리할 수 있었다.
-
-
-<img width="870" height="995" alt="Image" src="https://github.com/user-attachments/assets/f21d822e-9e54-4cc9-b40f-db0eee04b3d8" />
-<img width="835" height="1103" alt="Image" src="https://github.com/user-attachments/assets/04676a4b-30e7-46b5-adaa-cbd702cafa90" />
-
-<img width="1006" height="884" alt="Image" src="https://github.com/user-attachments/assets/689ff3ab-e624-43b0-8287-2d5838aa4000" />
 
 
